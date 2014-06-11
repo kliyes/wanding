@@ -3,3 +3,4 @@
 /.settings
 /src/settings/local.py
 /src/settings/__init__.py
+*.pyc

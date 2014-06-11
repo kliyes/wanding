@@ -1,5 +1,8 @@
+# -*-coding:utf-8 -*-
 # Django settings for wanding project.
 import os
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -119,7 +122,12 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    "django.core.context_processors.request",
+)
+
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -162,3 +170,5 @@ LOGGING = {
         },
     }
 }
+
+GRAPPELLI_ADMIN_TITLE = u'弯钉科技后台管理系统'
