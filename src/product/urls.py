@@ -5,10 +5,9 @@ Created on Jun 11, 2014
 @author: tom <tom@kliyes.com>
 '''
 
-from django.conf.urls import patterns
+from django.conf.urls import patterns, url
 
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'wanding.views.home', name='home'),
+    url(r'^(\d+)/(\d+)$', 'product.views.detail', name='detail'),
 )

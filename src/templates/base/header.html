@@ -1,0 +1,27 @@
+<div class="header">
+	<div class="w clear">
+		<h1 class="logo"><a href="{% url 'index' %}" title="弯钉"></a></h1>
+	    <ul class="mainNav fl">
+	        <li class="on"><a href="##">首页</a></li>
+	        <li><a href="##" target="_blank">弯钉论坛</a></li>
+	    </ul>
+	    <form class="searchBox fr">
+	    	<input type="text" placeholder="智能、创意"/>
+	    </form>
+	</div>
+</div>
+<div class="subNav">
+    <div class="w">
+        <ul class="clear">
+        	{{ current }}
+        	{% for cate in cates %}
+        		{% ifequal cate.id current %}
+	            	<li class="cur">
+	            {% else %}
+	            	<li>
+	            {% endifequal %}
+	            	<a href="#">{{ cate.name }}</a></li>
+	        {% endfor %}
+        </ul>
+    </div>
+</div>

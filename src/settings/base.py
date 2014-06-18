@@ -124,6 +124,8 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     "django.core.context_processors.request",
+
+    "product.context_processor.cates",
 )
 
 INSTALLED_APPS = (
@@ -136,6 +138,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'product',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -170,5 +173,7 @@ LOGGING = {
         },
     }
 }
+
+ITEM_PIC_FOLDER = 'item'
 
 GRAPPELLI_ADMIN_TITLE = u'弯钉科技后台管理系统'

@@ -16,6 +16,12 @@ urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),  # grappelli URLS
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^$', 'product.views.home_page', name='index'),
+    url(r'^about/$', 'product.views.about', name='about'),
+    url(r'^idea/$', 'product.views.idea', name='idea'),
+
+    (r'^product/', include('product.urls'))
 )
 
 if settings.DEBUG:

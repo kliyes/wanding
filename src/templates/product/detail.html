@@ -1,0 +1,70 @@
+{% extends "base/theme_base.html" %}
+
+{% block page_title %}产品详情{% endblock %}
+
+{% block content_base %}
+    <div class="w-detail mt40">
+        <div class="detail-top clear">
+            <div class="hd clear">
+                <div class="fl">
+                    <div class="crumbs">
+                    	<a href="{% url 'index' %}">首页</a>/
+                    	<a href="##">{{ cate.name }}</a>/
+                    	<span class="current">{{ item.name }}</span>
+                    </div>
+                </div>
+                <div class="fr detail-share">
+                    <div class="bdsharebuttonbox">
+                    	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    	<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                    	<a href="#" class="bds_more" data-cmd="more"></a>
+                    </div>
+                </div>
+                <span class="shareText fr">分享</span>
+            </div>
+            <div class="gallery fl mr15">
+                <div class="pic J_bigPic">
+                    <img src="" width="478" height="478"/>
+                </div>
+                <div class="smallPic">
+                    <ul class="J_gallery">
+                    	{% for pic in item.get_show_pics %}
+                    		<li><img src="{{ pic.pic.url }}" title="{{ pic.name }}"/></li>
+                    	{% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="detail-meta fl">
+                <h2>{{ item.name }}</h2>
+                <p class="price">￥{{ item.price }}</p>
+                <div class="detail-like">
+                    <p>品牌:{{ item.brand }}</p>
+                    <div class="clear">
+                    	<span class="fl">喜欢指数:（已有{{ item.like_count }}人喜欢）</span>
+                    	<div class="fav fl">喜欢<i data-id="68"></i></div>
+                	</div>
+                </div>
+                <div class="detail-info">
+                    <p>商品信息:</p>
+                    <p>重量：{{ item.weight }}</p>
+                    <p>产品尺寸：{{ item.product_size }}</p>
+                    <p>包装尺寸：{{ item.package_size }}</p>
+                    <p>材质：{{ item.material }}</p>
+                </div>
+                <div class="tag-links">关键词：
+                	{% for tag in item.tag.all %}
+                		<a href="##" rel="tag">{{ tag.name }}</a>
+                	{% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-detail mt15">
+        <div class="detail-con ovh">
+        	{% for pic in item.get_desc_pics %}
+            	<img class="block aligncenter" src="{{ pic.pic.url }}" width="750" height="663" />
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

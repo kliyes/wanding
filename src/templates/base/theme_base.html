@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>{% block page_title %}{% endblock %}-弯钉</title>
+		{% block base_css %}
+			<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}base/css/style.css"/>
+		{% endblock %}
+		{% block extra_css %}{% endblock %}
+	</head>
+	<body>
+		{% block header_base %}
+			{% block header %}{% include "base/header.html" %}{% endblock %}
+		{% endblock %}
+		{% block content_base %}{% endblock %}
+		{% block footer_base %}
+			{% block footer %}{% include "base/footer.html" %}{% endblock %}
+		{% endblock %}
+		{% block base_js %}
+		    <script type="text/javascript" src="{{ STATIC_URL }}base/js/jquery.js"></script>
+		    <script type="text/javascript" src="{{ STATIC_URL }}base/js/jquery.cookie.js"></script>
+		    <script type="text/javascript" src="{{ STATIC_URL }}base/js/js.js"></script>
+		    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdPopupOffsetLeft":-200,"bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		{% endblock %}
+		{% block single_js %}{% endblock %}
+	</body>
+</html>
