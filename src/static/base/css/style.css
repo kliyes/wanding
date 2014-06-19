@@ -547,6 +547,21 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+@media(min-width:1715px){
+	.w{
+		width:1715px;
+	}
+}
+@media(max-width:1714px) and (min-width:1470px){
+	.w{
+		width:1470px;
+	}
+}
+@media(max-width:1469px) and (min-width:1225px){
+	.w{
+		width:1225px;
+	}
+}
 @media(min-width:980px) and (max-width:1224px){
     .w,.w-news{
         width:980px;
