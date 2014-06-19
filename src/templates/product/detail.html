@@ -9,7 +9,7 @@
                 <div class="fl">
                     <div class="crumbs">
                     	<a href="{% url 'index' %}">首页</a>/
-                    	<a href="##">{{ cate.name }}</a>/
+                    	<a href="{% url 'index' %}?cate={{ cate.id }}">{{ cate.name }}</a>/
                     	<span class="current">{{ item.name }}</span>
                     </div>
                 </div>

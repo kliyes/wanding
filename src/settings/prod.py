@@ -21,3 +21,4 @@ DATABASES = {
 
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '../..', 'media').replace('\\','/'),
 MEDIA_URL = 'http://www.wanding.com/media/'
+FORUM_URL = 'http://bbs.wanding.com/'

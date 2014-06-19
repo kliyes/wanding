@@ -9,5 +9,5 @@ from django.conf.urls import patterns, url
 
 
 urlpatterns = patterns('',
-    url(r'^(\d+)/(\d+)$', 'product.views.detail', name='detail'),
+    url(r'^(\d+)/$', 'product.views.detail', name='detail'),
 )

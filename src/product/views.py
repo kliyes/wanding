@@ -10,7 +10,9 @@ from django.http.response import Http404
 
 
 def home_page(req):
-    return render_and_response(req, 'index.html')
+    cate = Category.objects.get_by_id(req.REQUEST.get('cate', '1'))
+    return render_and_response(req, 'index.html',
+        {'items': cate.item_set.filter(is_active=True), 'cate': cate})
 
 
 def about(req):
@@ -21,9 +23,9 @@ def idea(req):
     return render_and_response(req, 'idea.html')
 
 
-def detail(req, cate, id):
+def detail(req, id):
     item = Item.objects.get_by_id(id)
-    cate = Category.objects.get_by_id(cate)
+    cate = Category.objects.get_by_id(req.REQUEST.get('cate', '1'))
     if not item or not item.is_active or not cate or not cate in item.cate.all():
         raise Http404
     return render_and_response(req, 'product/detail.html', {'item': item,

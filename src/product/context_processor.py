@@ -4,10 +4,19 @@
 # Created on Jun 18, 2014, by tom
 #
 #
+import settings
 __author__ = 'tom'
 
 from product.models import Category
 
 
 def cates(req):
-    return {'cates': Category.objects.all(), 'current': req.REQUEST.get('cate')}
+    current = req.REQUEST.get('cate', '1')
+    if not current.isdigit():
+        current = 1
+    current = int(current)
+    return {'cates': Category.objects.all(), 'current': current}
+
+
+def forum(req):
+    return {'forum': settings.FORUM_URL}

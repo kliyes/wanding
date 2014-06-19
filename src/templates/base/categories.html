@@ -1,0 +1,14 @@
+<div class="subNav">
+    <div class="w">
+        <ul class="clear">
+        	{% for c in cates %}
+        		{% if c.id == current %}
+            		<li class="cur">
+            	{% else %}
+            		<li>
+            	{% endif %}
+        		<a href="{% url 'index' %}?cate={{ c.id }}">{{ c.name }}</a></li>
+	        {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -126,6 +126,7 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     "django.core.context_processors.request",
 
     "product.context_processor.cates",
+    "product.context_processor.forum",
 )
 
 INSTALLED_APPS = (
@@ -175,5 +176,7 @@ LOGGING = {
 }
 
 ITEM_PIC_FOLDER = 'item'
+
+FORUM_URL = ''
 
 GRAPPELLI_ADMIN_TITLE = u'弯钉科技后台管理系统'
