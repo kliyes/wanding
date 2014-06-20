@@ -9,15 +9,19 @@
     </div>
 	<div class="w">
 		<div class="clear items">
-			{% for item in items %}
-				<div class="item col2">
-	                <a href="{% url 'detail' item.id %}?cate={{ cate.id }}"><img src="{{ item.get_show_pics.0.pic.url }}"/></a>
-	                <div class="meta">
-	                    <p class="meta-name">{{ item.name }}</p>
-	                    <p class="meta-price">￥{{ item.price }}</p>
-	                    <div class="fav">喜欢<i data-id="68"></i></div>
-	                </div>
-	            </div>
+			{% for item in items.object_list %}
+				{% if forloop.counter == 1 or forloop.counter == 16 %}
+					<div class="item col1">
+		        {% else %}
+					<div class="item col2">
+				{% endif %}
+		                <a href="{% url 'detail' item.id %}?cate={{ cate.id }}"><img src="{{ item.get_show_pics.0.pic.url }}"/></a>
+		                <div class="meta">
+		                    <p class="meta-name">{{ item.name }}</p>
+		                    <p class="meta-price">￥{{ item.price }}</p>
+		                    <div class="fav">喜欢<i data-id="68"></i></div>
+		                </div>
+		            </div>
 			{% endfor %}
 		</div>
 	</div>

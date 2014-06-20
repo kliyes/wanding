@@ -20,3 +20,7 @@ def cates(req):
 
 def forum(req):
     return {'forum': settings.FORUM_URL}
+
+
+def service_qq(req):
+    return {'qq': settings.SERVICE_QQ}

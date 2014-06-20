@@ -1,11 +1,19 @@
-<div class="m-page">
-    <a class="prev" href="#" target="_blank">&lt;</a>
-    <a class="cur" href="#" target="_blank">1</a>
-    <a href="#" target="_blank">2</a>
-    <a href="#" target="_blank">3</a>
-    <a href="#" target="_blank">4</a>
-    <a href="#" target="_blank">5</a>
-    <span>......</span>
-    <a href="#" target="_blank">23</a>
-    <a class="next" href="#" target="_blank">&gt;</a>
-</div>
+{% ifnotequal page.paginator.num_pages 1 %}
+	<div class="m-page">
+		{% if page.has_previous %}
+	    	<a class="prev" href="{% url 'index' %}?cate={{ cate.id }}&p={{ page.previous_page_number }}">&lt;</a>
+	    {% endif %}
+	    {% for i in page.paginator.page_range %}
+	    	{% if i == page.number %}
+	    		<a class="cur">{{ page.number }}</a>
+	    	{% else %}
+	    		<a href="{% url 'index' %}?cate={{ cate.id }}&p={{ i }}">{{ i }}</a>
+	    	{% endif %}
+	    {% endfor %}
+	    {% if page.has_next %}
+	    	<a class="next" href="{% url 'index' %}?cate={{ cate.id }}&p={{ page.next_page_number }}">&gt;</a>
+	    {% endif %}
+	</div>
+{% endifnotequal %}
+    <!-- <span>......</span>
+    <a href="#" target="_blank">23</a> -->

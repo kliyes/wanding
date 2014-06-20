@@ -127,6 +127,7 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
 
     "product.context_processor.cates",
     "product.context_processor.forum",
+    "product.context_processor.service_qq",
 )
 
 INSTALLED_APPS = (
@@ -178,5 +179,7 @@ LOGGING = {
 ITEM_PIC_FOLDER = 'item'
 
 FORUM_URL = ''
+
+SERVICE_QQ = '280141846'
 
 GRAPPELLI_ADMIN_TITLE = u'弯钉科技后台管理系统'
