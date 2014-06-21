@@ -8,6 +8,7 @@ from django.db import models
 
 from core.models import BaseModel
 import settings
+from django.contrib.auth.models import User
 
 
 class Tag(BaseModel):
@@ -87,3 +88,13 @@ class Pic(BaseModel):
         verbose_name = u'产品图片'
         verbose_name_plural = u'产品图片'
         ordering = ('type', 'rank')
+
+
+class LikeRecord(BaseModel):
+    user = models.ForeignKey(User, verbose_name=u'用户', null=True, blank=True)
+    ip = models.IPAddressField(u'用户ip', null=True, blank=True)
+    item = models.ForeignKey(Item, verbose_name=u'产品')
+
+    class Meta:
+        verbose_name = u'喜欢操作记录'
+        verbose_name_plural = u'喜欢操作记录'

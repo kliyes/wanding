@@ -5,8 +5,8 @@
 	        <li class="on"><a href="{% url 'index' %}">首页</a></li>
 	        <li><a href="{{ forum }}" target="_blank">弯钉论坛</a></li>
 	    </ul>
-	    <form class="searchBox fr">
-	    	<input type="text" placeholder="智能、创意"/>
+	    <form action="{% url 'index' %}" class="searchBox fr">
+	    	<input type="text" name="k" id="k" placeholder="智能、创意"/>
 	    </form>
 	</div>
 </div>

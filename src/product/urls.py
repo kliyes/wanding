@@ -10,4 +10,5 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('',
     url(r'^(\d+)/$', 'product.views.detail', name='detail'),
+    url(r'^like/$', 'product.views.like', name='like'),
 )

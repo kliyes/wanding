@@ -14,4 +14,4 @@ def render_and_response(req, t, data={}):
 
 
 def get_ip(req):
-    return req.META.get('HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR')
+    return req.META.get('HTTP_X_FORWARDED_FOR') or req.META.get('REMOTE_ADDR')

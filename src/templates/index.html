@@ -19,11 +19,41 @@
 		                <div class="meta">
 		                    <p class="meta-name">{{ item.name }}</p>
 		                    <p class="meta-price">￥{{ item.price }}</p>
-		                    <div class="fav">喜欢<i data-id="68"></i></div>
+		                    <div class="fav">
+		                    	喜欢
+		                    	{% if item in liked %}
+		                    		<i class="on"></i>
+		                    	{% else %}
+		                    		<i id="btn_like_{{ item.id }}" onclick='like("{{ item.id }}")'></i>
+		                    	{% endif %}
+							</div>
 		                </div>
 		            </div>
 			{% endfor %}
 		</div>
 	</div>
 	{% include "base/paginator.html" %}
+	{% block single_js %}
+		<script type="text/javascript">
+			function like(id){
+		    	$.ajax({
+					url: "{% url 'like' %}", 
+					data: {'id': id},
+					type: "get",
+					success: function(data){
+						if(data.status==1){
+							$("#btn_like_" + id).addClass("on");
+						}
+						else{
+							alert(data.msg);
+						}
+					}, 
+					error: function(){
+						alert("error");
+					}, 
+					dataType: "json"
+				});
+			}
+		</script>
+	{% endblock %}
 {% endblock %}

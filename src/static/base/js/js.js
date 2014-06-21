@@ -34,20 +34,19 @@ $(function(){
     $(window).resize(function() {
         $('.items').masonry({itemSelector:'.item',columnWidth:245});
     });
-    $(".fav > i").click(function(){
-        if(!$(this).hasClass("on")){
-            $(this).addClass("on");
-            var nId = $(this).attr('data-id')
-            var sKey = 'like';
-            if($.cookie('like') === undefined){
-                $.cookie(sKey, nId, {expires: 365});
-            } else if(checkLike(nId,$.cookie(sKey))){
-                var sNewValue = $.cookie(sKey) + "|" + nId;
-                $.cookie(sKey, sNewValue, {expires: 365});
-            };
-        }
-    })
-    initLike();
+    // $(".fav > i").click(function(){
+        // if(!$(this).hasClass("on")){
+            // $(this).addClass("on");
+            // var nId = $(this).attr('data-id')
+            // var sKey = 'like';
+            // if($.cookie('like') === undefined){
+                // $.cookie(sKey, nId, {expires: 365});
+            // } else if(checkLike(nId,$.cookie(sKey))){
+                // var sNewValue = $.cookie(sKey) + "|" + nId;
+                // $.cookie(sKey, sNewValue, {expires: 365});
+            // };
+        // }
+    // })
     //详情页面相册效果
     $('.J_gallery > li').eq(0).addClass("on");
     var sPic = $('.J_gallery > li').eq(0).children("img").attr("src");
