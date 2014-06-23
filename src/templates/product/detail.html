@@ -61,7 +61,7 @@
                 </div>
                 <div class="tag-links">关键词：
                 	{% for tag in item.tag.all %}
-                		<a href="##" rel="tag">{{ tag.name }}</a>
+                		<a href="{% url 'tag' %}?tid={{ tag.id }}" rel="tag">{{ tag.name }}</a>
                 	{% endfor %}
                 </div>
             </div>

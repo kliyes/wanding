@@ -15,7 +15,7 @@
 		        {% else %}
 					<div class="item col2">
 				{% endif %}
-		                <a href="{% url 'detail' item.id %}?cate={{ cate.id }}"><img src="{{ item.get_show_pics.0.pic.url }}"/></a>
+		                <a href="{% url 'detail' item.id %}?cate={% ifequal from 'search' %}{{ item.cate.all.0.id }}{% else %}{{ cate.id }}{% endifequal %}"><img src="{{ item.get_show_pics.0.pic.url }}"/></a>
 		                <div class="meta">
 		                    <p class="meta-name">{{ item.name }}</p>
 		                    <p class="meta-price">￥{{ item.price }}</p>
