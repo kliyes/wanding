@@ -19,6 +19,7 @@ DATABASES = {
     }
 }
 
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '../..', 'media').replace('\\','/'),
-MEDIA_URL = 'http://www.wanding.com/media/'
-FORUM_URL = 'http://bbs.wanding.com/'
+#MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '../..', 'media').replace('\\','/'),
+MEDIA_ROOT = '/var/data/wanding/media/'
+MEDIA_URL = 'http://www.wandingke.com/media/'
+FORUM_URL = 'http://bbs.wandingke.com/'
