@@ -20,6 +20,8 @@ urlpatterns = patterns('',
     url(r'^$', 'product.views.home_page', name='index'),
     url(r'^about/$', 'product.views.about', name='about'),
     url(r'^idea/$', 'product.views.idea', name='idea'),
+    url(r'^search/$', 'product.views.search', name='search'),
+    url(r'^tag/$', 'product.views.serch_tag', name='tag'),
 
     (r'^product/', include('product.urls'))
 )
