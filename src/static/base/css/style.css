@@ -75,6 +75,9 @@ a img {
 .tac {
     text-align: center;
 }
+.tac a {
+	color: #5f9219;
+}
 .tar {
     text-align: right;
 }
